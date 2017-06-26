@@ -8,12 +8,12 @@
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "deploy": "gh-pages-deploy"
   },
   "dependencies": {
     "rxjs": "^5.4.1",
     "vue": "^2.3.4",
-    "vue-radial-progress": "^0.2.10",
     "vue-rx": "^3.2.0"
   },
   "devDependencies": {
@@ -67,5 +67,10 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "cname": "nope.org",
+    "noprompt": false
+  }
 }
