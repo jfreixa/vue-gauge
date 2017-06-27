@@ -53,7 +53,8 @@
         return Observable.merge(week$, month$, quarter$, year$)
       },
       createObservable (observable, type) {
-        let observableTemp = observable.flatMap(FakeGaugesProvider[type])
+        let observableTemp = this.isActive(type) ? observable.startWith('') : observable
+        observableTemp = observableTemp.flatMap(FakeGaugesProvider[type])
         observableTemp.subscribe(() => {
           this.active = type
         })
